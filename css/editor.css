@@ -6508,6 +6508,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-sm .navbar-nav {
     flex-direction: row;
+    justify-content: flex-end;
   }
   .navbar-expand-sm .navbar-nav .dropdown-menu {
     position: absolute;
@@ -6522,6 +6523,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
+    justify-content: flex-end;
     flex-basis: auto;
   }
   .navbar-expand-sm .navbar-toggler {
@@ -6542,6 +6544,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-md .navbar-nav {
     flex-direction: row;
+    justify-content: flex-end;
   }
   .navbar-expand-md .navbar-nav .dropdown-menu {
     position: absolute;
@@ -6556,6 +6559,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-md .navbar-collapse {
     display: flex !important;
+    justify-content: flex-end;
     flex-basis: auto;
   }
   .navbar-expand-md .navbar-toggler {
@@ -6576,6 +6580,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
+    justify-content: flex-end;
   }
   .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
@@ -6590,6 +6595,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
+    justify-content: flex-end;
     flex-basis: auto;
   }
   .navbar-expand-lg .navbar-toggler {
@@ -6610,6 +6616,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-xl .navbar-nav {
     flex-direction: row;
+    justify-content: flex-end;
   }
   .navbar-expand-xl .navbar-nav .dropdown-menu {
     position: absolute;
@@ -6624,6 +6631,7 @@ input[type=button].btn-block {
   }
   .navbar-expand-xl .navbar-collapse {
     display: flex !important;
+    justify-content: flex-end;
     flex-basis: auto;
   }
   .navbar-expand-xl .navbar-toggler {
@@ -6641,6 +6649,7 @@ input[type=button].btn-block {
 }
 .navbar-expand .navbar-nav {
   flex-direction: row;
+  justify-content: flex-end;
 }
 .navbar-expand .navbar-nav .dropdown-menu {
   position: absolute;
@@ -6655,6 +6664,7 @@ input[type=button].btn-block {
 }
 .navbar-expand .navbar-collapse {
   display: flex !important;
+  justify-content: flex-end;
   flex-basis: auto;
 }
 .navbar-expand .navbar-toggler {
