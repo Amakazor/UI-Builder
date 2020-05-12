@@ -60,8 +60,7 @@ function initPanelToggle() {
         if (!$(this).hasClass('active')) {
             $(this).addClass('active');
             $(this).siblings().removeClass('active');
-            $('#left-panel').toggle();
-            $('#right-panel').toggle();
+            $('#'+$(this).attr('data-panelid')).show().siblings().hide();
         }
     });
 }
@@ -72,7 +71,7 @@ function hideAuxiliaryElements() {
 
 function setPageSrcdoc(page) {
     localStorage.getItem(page.name)
-        && (page.srcdoc = generateHtmlFromLocalStorageItemKey(page.url, page.name));
+    && (page.srcdoc = generateHtmlFromLocalStorageItemKey(page.url, page.name));
 }
 
 function getSavedPages() {
