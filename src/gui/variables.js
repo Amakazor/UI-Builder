@@ -31,7 +31,7 @@ export default Variables = {
     render() {
         if (this.variablesContainer) {
             for (let [Index, Val] of Object.entries(this.cssHeaders)) {
-                this.variablesContainer[0].insertAdjacentHTML('beforeend', tmpl("inputsectioninput", {
+                this.variablesContainer[0].insertAdjacentHTML('afterbegin', tmpl("inputsectioninput", {
                     key: "variables_" + Val.name,
                     header: Val.value
                 }))
