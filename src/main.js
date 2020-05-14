@@ -19,7 +19,6 @@ $(document).ready(function () {
     }
     FileManager.init();
     initBuilderPage();
-    initVariables();
     initPanelToggle();
     initTopPanelDrag();
 });

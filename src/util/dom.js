@@ -110,11 +110,6 @@ function initBuilderPage() {
     Builder.init(page);
 }
 
-function initVariables() {
-    Variables.init();
-    Variables.render();
-}
-
 function setIframeHeight(iframe) {
     if (iframe) {
         var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
@@ -660,7 +655,7 @@ export {
     getStyle, setIframeHeight, launchFullScreen, downloadAsTextFile, getBeautifiedHtml, delay,
     getHtml, getHash, createPage, loadCallback, getSelectedElements, clearSelectedElements,
     addOrRemoveElement, highlightOnMove, highlightwhenSelected, getElementWithSpecifiedClass, isOverlap, generateHtmlFromLocalStorageItemKey,
-    initPanelToggle, initVariables ,initBuilderPage, setGlobalVariables, setPageSrcdoc, clearTimer, isTemplatePage,
+    initPanelToggle, initBuilderPage, setGlobalVariables, setPageSrcdoc, clearTimer, isTemplatePage,
     getSavedPages, hideAuxiliaryElements, decodeHash, generateHtml, getClickedPopup, clickedPopupExists,
     createClickedPopup, applyTheme, getCurrentThemeName, changeOffset, alignCallback, isSelectedElement,
     areSiblings, getFunctionInIframe, setSelectedElements

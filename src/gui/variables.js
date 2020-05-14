@@ -2,6 +2,7 @@ import tmpl from '../util/tmpl';
 import { ColorInput, CssUnitInput } from '../inputs/inputs'
 
 export default Variables = {
+    bodyElement: undefined,
     variablesContainer: $("#variables"),
     cssVariables: {},
     cssHeaders: {
@@ -21,11 +22,11 @@ export default Variables = {
 
     init() {
         this.load();
-        // this.cssVariables.colors = {"color-red":"#FF0000", "color-blue":"#0000FF"};
-        // this.cssVariables.sizes = {"font-size-normal":"14px","font-size-big":"5rem"};
-        // this.save();
+        //this.cssVariables.colors = {"color-red":"#FF0000", "color-blue":"#0000FF"};
+        //this.cssVariables.sizes = {"font-size-normal":"14px","font-size-big":"5rem"};
+        //this.save();
         //this.load();
-        this.prepareInputs()
+        this.prepareInputs();
     },
     render() {
         if (this.variablesContainer) {
@@ -93,6 +94,9 @@ export default Variables = {
                         $(this.inputs[Index][Name].element[0]).on('propertyChange', {objectReference: this} , function (Event, Value, Object) {
                             Event.data.objectReference.changeValue($(Object).data('group'), $(Object).data('name'), Value);
                             Event.data.objectReference.save();
+                            if (window.FrameDocument) {
+                                Event.data.objectReference.setVariables();
+                            }
                         })
                     }
                 }
@@ -103,8 +107,33 @@ export default Variables = {
         if (Name && Value) {
             if(this.cssVariables[Group][Name]) {
                 this.cssVariables[Group][Name] = Value;
-                console.log(this.cssVariables);
             }
         }
-    }
+    },
+    setVariables() {
+        if (this.bodyElement)
+        {
+            let body = this.bodyElement;
+
+            if (!body.querySelector("style#variables")) {
+                body.insertAdjacentHTML("beforeend", "<style id='variables'></style>");
+            }
+
+            let VariablesElement = body.querySelector("style#variables");
+            VariablesElement.innerHTML = this.parseVariablesToCss();
+        }
+    },
+    parseVariablesToCss() {
+        let parsedCss = ":root{";
+        for (let [Index, Values] of Object.entries(this.cssVariables)) {
+            for (let [Name,Value] of Object.entries(Values)) {
+                parsedCss += "--"+Name+": "+Value+";";
+            }
+        }
+        parsedCss +="}";
+        return parsedCss;
+    },
+    setBodyElement(bodyElement) {
+        this.bodyElement = bodyElement;
+    },
 }

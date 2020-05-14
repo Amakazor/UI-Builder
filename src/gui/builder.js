@@ -25,6 +25,7 @@ import { isInIframe } from '../constants';
 import { multiSelectedCopy, multiSelectedDelete } from '../shared';
 import MultiChildListMutation from '../models/mutation/multi-child-list-mutation';
 import { closeDropdown } from './undo-history';
+import Variables from "./variables";
 
 export default Builder = {
 	dragMoveMutation: false,
@@ -54,8 +55,12 @@ export default Builder = {
 
 
 			initInteractions();
+			Variables.setBodyElement(window.FrameDocument.body);
+			Variables.setVariables();
 			return this._initHightlight();
 		});
+		Variables.init();
+		Variables.render();
 	},
 	loadControlGroups() {
 		const componentsList = $("#components-list");
