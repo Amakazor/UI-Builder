@@ -66,9 +66,7 @@ export default Variables = {
         if (CssVariablesStorage) {
             this.cssVariables = CssVariablesStorage;
         } else {
-            this.cssVariables = {
-                colors: null,
-            }
+            this.cssVariables = {}
         }
     },
     save() {
@@ -136,4 +134,17 @@ export default Variables = {
     setBodyElement(bodyElement) {
         this.bodyElement = bodyElement;
     },
+    getPropertiesArray(index) {
+        let CssVariablesStorage = JSON.parse(localStorage.getItem("CssVariablesStorage"));
+        let properties = [];
+
+        if (CssVariablesStorage) {
+            if (CssVariablesStorage[index]) {
+                for (let [Name,Value] of Object.entries(CssVariablesStorage[index])) {
+                    properties.push({value:"var(--"+Name+")", text:Name})
+                }
+            }
+        }
+        return properties
+    }
 }
