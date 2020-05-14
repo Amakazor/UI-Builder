@@ -76,8 +76,10 @@ function setPageSrcdoc(page) {
 }
 
 function getSavedPages() {
-    return Object.keys(localStorage)
-        .map(item => createPage(item, item));
+    let keys = Object.keys(localStorage);
+    let index = keys.indexOf("CssVariablesStorage");
+    if (index !== -1) keys.splice(index, 1);
+    return keys.map(item => createPage(item, item));
 }
 
 function isTemplatePage(pageName) {
