@@ -40,8 +40,8 @@ class CssUnitInput extends Input {
 		$('select', this.element).val(this.unit);
 	}
 
-	init(data) {
-		return this.render("cssunitinput", data);
+	init(data, isBootstraped=false) {
+		return this.render("cssunitinput"+(isBootstraped?"bootstrap":""), data);
 	}
 }
 

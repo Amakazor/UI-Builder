@@ -1,6 +1,6 @@
 import FileManager from './gui/file-manager';
 import {
-    initPanelToggle, initBuilderPage, setGlobalVariables
+    initPanelToggle, initVariables, initBuilderPage, setGlobalVariables
 } from './util/dom';
 import { beBackwardCompatible } from './util/common';
 import { isInIframe } from './constants';
@@ -19,6 +19,7 @@ $(document).ready(function () {
     }
     FileManager.init();
     initBuilderPage();
+    initVariables();
     initPanelToggle();
     initTopPanelDrag();
 });

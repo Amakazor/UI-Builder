@@ -15271,6 +15271,37 @@ body {
 #vvveb-builder #variable-panel {
   overflow: hidden;
 }
+#vvveb-builder #variable-panel #variables {
+  color: #777;
+}
+#vvveb-builder #variable-panel #variables .custom-select {
+  height: auto;
+}
+#vvveb-builder #variable-panel #variables .form-control, #vvveb-builder #variable-panel #variables .custom-select {
+  padding: 0.275rem 0.25rem;
+}
+#vvveb-builder #variable-panel #variables [class^=col-sm-] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#vvveb-builder #variable-panel #variables label {
+  font-size: 11px;
+  margin-bottom: 0px;
+  margin-top: 4px;
+}
+#vvveb-builder #variable-panel #variables label i {
+  font-size: 14px;
+}
+#vvveb-builder #variable-panel #variables .input {
+  width: 100%;
+}
+#vvveb-builder #variable-panel #variables .custom-control {
+  min-height: 1.1rem;
+}
+#vvveb-builder #variable-panel #variables div.section > div {
+  display: flex;
+  flex-wrap: wrap;
+}
 #vvveb-builder #left-panel {
   overflow: hidden;
 }
@@ -15491,7 +15522,8 @@ body {
 #vvveb-builder #right-panel {
   color: #777;
 }
-#vvveb-builder #right-panel, #vvveb-builder #right-panel select, #vvveb-builder #right-panel input {
+#vvveb-builder #right-panel, #vvveb-builder #right-panel select, #vvveb-builder #right-panel input,
+#vvveb-builder #variable-panel, #vvveb-builder #variable-panel select, #vvveb-builder #variable-panel input {
   font-size: 12px;
 }
 #vvveb-builder #right-panel label {

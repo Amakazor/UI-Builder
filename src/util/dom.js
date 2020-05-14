@@ -1,5 +1,6 @@
 import Builder from '../gui/builder';
 import FileManager from '../gui/file-manager';
+import Variables from '../gui/variables';
 import {
     removeUnusedTags, emptyChildren, generateCalendarOnclickAttr,
     replaceWithExternalFiles, addNameBrackets,
@@ -107,6 +108,11 @@ function initBuilderPage() {
     }
     FileManager.showActive(page.name);
     Builder.init(page);
+}
+
+function initVariables() {
+    Variables.init();
+    Variables.render();
 }
 
 function setIframeHeight(iframe) {
@@ -654,7 +660,7 @@ export {
     getStyle, setIframeHeight, launchFullScreen, downloadAsTextFile, getBeautifiedHtml, delay,
     getHtml, getHash, createPage, loadCallback, getSelectedElements, clearSelectedElements,
     addOrRemoveElement, highlightOnMove, highlightwhenSelected, getElementWithSpecifiedClass, isOverlap, generateHtmlFromLocalStorageItemKey,
-    initPanelToggle, initBuilderPage, setGlobalVariables, setPageSrcdoc, clearTimer, isTemplatePage,
+    initPanelToggle, initVariables ,initBuilderPage, setGlobalVariables, setPageSrcdoc, clearTimer, isTemplatePage,
     getSavedPages, hideAuxiliaryElements, decodeHash, generateHtml, getClickedPopup, clickedPopupExists,
     createClickedPopup, applyTheme, getCurrentThemeName, changeOffset, alignCallback, isSelectedElement,
     areSiblings, getFunctionInIframe, setSelectedElements

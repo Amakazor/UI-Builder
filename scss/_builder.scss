@@ -102,6 +102,53 @@ body
 	#variable-panel
 	{
 		overflow:hidden;
+
+		#variables
+		{
+			color:#777;
+
+			.custom-select
+			{
+				height:auto;
+			}
+			.form-control, .custom-select
+			{
+				padding:.275rem 0.25rem;
+			}
+			[class^="col-sm-"]
+			{
+				padding-left:10px;
+				padding-right:10px;
+			}
+
+			label
+			{
+				font-size:11px;
+				margin-bottom:0px;
+				margin-top:4px;
+
+				i
+				{
+					font-size:14px;
+				}
+			}
+
+			.input
+			{
+				width:100%;
+			}
+
+			.custom-control
+			{
+				min-height:1.1rem;
+			}
+
+			div.section > div
+			{
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
 	}
 
 	#left-panel
@@ -432,7 +479,8 @@ body
 		color:#777;
 	}
 
-	#right-panel, #right-panel select, #right-panel input
+	#right-panel, #right-panel select, #right-panel input,
+	#variable-panel, #variable-panel select, #variable-panel input
 	{
 		font-size:12px;
 	}

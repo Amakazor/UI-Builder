@@ -18,11 +18,11 @@ class ColorInput extends Input {
 	}
 
 	setValue(value) {
-		$('input', this.element).val(this.rgb2hex(value));
+		$('input', this.element).value = this.rgb2hex(value);
 	}
 
-	init(data) {
-		return this.render("colorinput", data);
+	init(data, isBootstraped = false) {
+		return this.render("colorinput"+(isBootstraped?"bootstrap":""), data);
 	}
 }
 
