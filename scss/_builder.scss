@@ -292,6 +292,15 @@ body
 				min-height:1.1rem;
 			}
 		}
+
+		.custom-variable_input
+		{
+			.switchVariable:checked ~ .nonVariableInput,
+			.switchVariable:not(:checked) ~ .variableInput
+			{
+				display: none;
+			}
+		}
 	}
 
 	#top-panel

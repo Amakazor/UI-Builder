@@ -15393,6 +15393,10 @@ body {
 #vvveb-builder #right-panel .form-group .custom-control {
   min-height: 1.1rem;
 }
+#vvveb-builder #right-panel .custom-variable_input .switchVariable:checked ~ .nonVariableInput,
+#vvveb-builder #right-panel .custom-variable_input .switchVariable:not(:checked) ~ .variableInput {
+  display: none;
+}
 #vvveb-builder #top-panel {
   height: 35px;
   border-bottom: 1px solid #eee;

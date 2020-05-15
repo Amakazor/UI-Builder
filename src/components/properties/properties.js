@@ -1,6 +1,6 @@
 import {
     TextInput, SelectInput, ToggleInput, NumberInput, LinkInput,
-    FileUploadInput, ImageInput, ColorInput
+    FileUploadInput, ImageInput, ColorInput, VariableColorInput
 } from "../../inputs/inputs";
 import {
     dataRowField, dataValueMapping, dataTextMapping, formText, textMuted, formCheckInline,
@@ -17,6 +17,7 @@ import { requiredSpanSelector, inputBlockClassSelector } from "../../util/select
 import { getRandomString } from "../../util/common";
 import { clickedPopupExists, createClickedPopup } from "../../util/dom";
 import camelCase from 'lodash/camelCase';
+import Variables from '../../gui/variables'
 
 const inputSizeProperty = {
     name: "Size",
@@ -1112,14 +1113,20 @@ const backgroundColorProperty = {
     name: "Background Color",
     key: "background-color",
     htmlAttr: "style",
-    inputtype: new ColorInput(),
+    inputtype: new VariableColorInput(),
+    data: {
+        options: Variables.getPropertiesArray("colors")
+    }
 };
 
 const textColorProperty = {
     name: "Text Color",
     key: "color",
     htmlAttr: "style",
-    inputtype: new ColorInput(),
+    inputtype: new VariableColorInput(),
+    data: {
+        options: Variables.getPropertiesArray("colors")
+    }
 };
 
 const containerTypeProperty = {

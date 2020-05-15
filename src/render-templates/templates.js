@@ -24,6 +24,7 @@ import inputimageinput from './input-imageinput';
 import inputtabvalue from './input-tabvalue';
 import variablepre from './variable-pre';
 import variablepost from './variable-post';
+import inputvariablecolorinput from './input-variablecolorinput';
 
 const templates = {
     inputnumberinput,
@@ -51,7 +52,8 @@ const templates = {
     inputimageinput,
     inputtabvalue,
     variablepre,
-    variablepost
+    variablepost,
+    inputvariablecolorinput
 };
 
 export default templates;
