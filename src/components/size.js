@@ -1,5 +1,6 @@
-import { SectionInput, CssUnitInput } from '../inputs/inputs';
+import {SectionInput, CssUnitInput, VariableCssUnitInput} from '../inputs/inputs';
 import { inc_base_sort } from './common';
+import Variables from "../gui/variables";
 
 const size = {
     properties: [{
@@ -15,7 +16,12 @@ const size = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Height",
         key: "height",
@@ -23,7 +29,12 @@ const size = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Min Width",
         key: "min-width",
@@ -31,7 +42,12 @@ const size = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Min Height",
         key: "min-height",
@@ -39,7 +55,12 @@ const size = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Max Width",
         key: "max-width",
@@ -47,7 +68,12 @@ const size = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Max Height",
         key: "max-height",
@@ -55,7 +81,12 @@ const size = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }]
 };
 
