@@ -1,5 +1,6 @@
-import { SectionInput, CssUnitInput } from '../inputs/inputs';
+import {SectionInput, CssUnitInput, VariableCssUnitInput} from '../inputs/inputs';
 import { inc_base_sort } from './common';
+import Variables from "../gui/variables";
 
 const padding = {
     properties: [{
@@ -15,7 +16,12 @@ const padding = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Right",
         key: "padding-right",
@@ -23,7 +29,12 @@ const padding = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Bottom",
         key: "padding-bottom",
@@ -31,7 +42,12 @@ const padding = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }, {
         name: "Left",
         key: "padding-left",
@@ -39,7 +55,12 @@ const padding = {
         sort: inc_base_sort(),
         col: 6,
         inline: true,
-        inputtype: new CssUnitInput()
+        inputtype: new VariableCssUnitInput(),
+        data: {
+            options: Variables.getPropertiesArray("sizes"),
+            keygroup: "",
+            keyname: "",
+        }
     }]
 };
 
