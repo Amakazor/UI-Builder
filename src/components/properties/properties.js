@@ -763,24 +763,11 @@ const progressBackgroundProperty = {
     name: "Progress background",
     key: "background",
     child: ".progress-bar",
-    htmlAttr: "class",
+    htmlAttr: "style",
     validValues: bgcolorClasses,
-    inputtype: new SelectInput(),
+    inputtype: new VariableColorInput(),
     data: {
-        options: bgcolorSelectOptions
-    }
-};
-
-const progressStripedProperty = {
-    name: "Striped",
-    key: "striped",
-    child: ".progress-bar",
-    htmlAttr: "class",
-    validValues: ["", "progress-bar-striped"],
-    inputtype: new ToggleInput(),
-    data: {
-        on: "progress-bar-striped",
-        off: "",
+        options: Variables.getPropertiesArray("colors")
     }
 };
 
@@ -1219,7 +1206,6 @@ export {
     headingSizeProperty,
     progressBarProperty,
     progressBackgroundProperty,
-    progressStripedProperty,
     progressAnimatedProperty,
     tableBorderedProperty,
     tableHeadOptions,

@@ -1,13 +1,11 @@
 import {
-    backgroundProperty, progressBarProperty, progressBackgroundProperty, progressStripedProperty,
+    progressBarProperty, progressBackgroundProperty,
     progressAnimatedProperty
 } from './properties';
 
 const progressProperties = [
-    backgroundProperty,
     progressBarProperty,
     progressBackgroundProperty,
-    progressStripedProperty,
     progressAnimatedProperty
 ]
 
