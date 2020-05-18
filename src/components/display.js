@@ -1,7 +1,18 @@
 import { inc_base_sort } from './common';
-import { SectionInput, SelectInput, RadioButtonInput, CssUnitInput, ColorInput, RangeInput, NumberInput } from '../inputs/inputs';
+import {
+    SectionInput,
+    SelectInput,
+    RadioButtonInput,
+    CssUnitInput,
+    ColorInput,
+    RangeInput,
+    NumberInput,
+    VariableCssUnitInput,
+    VariableColorInput
+} from '../inputs/inputs';
 import { overflowProperty } from './properties/properties';
 import extend from 'lodash/extend';
+import Variables from "../gui/variables";
 
 const display = {
     properties: [
@@ -67,7 +78,12 @@ const display = {
             col: 6,
             inline: true,
             parent: "",
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, {
             name: "Left",
             key: "left",
@@ -76,7 +92,12 @@ const display = {
             col: 6,
             inline: true,
             parent: "",
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, {
             name: "Bottom",
             key: "bottom",
@@ -85,7 +106,12 @@ const display = {
             col: 6,
             inline: true,
             parent: "",
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, {
             name: "Right",
             key: "right",
@@ -94,7 +120,12 @@ const display = {
             col: 6,
             inline: true,
             parent: "",
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, extend({}, overflowProperty, {
             sort: inc_base_sort(),
         }), extend({}, overflowProperty, {
@@ -165,7 +196,10 @@ const display = {
             col: 6,
             inline: true,
             htmlAttr: "style",
-            inputtype: new ColorInput(),
+            inputtype: new VariableColorInput(),
+            data: {
+                options: Variables.getPropertiesArray("colors")
+            }
         }, {
             name: "Text Color",
             key: "color",
@@ -173,7 +207,10 @@ const display = {
             col: 6,
             inline: true,
             htmlAttr: "style",
-            inputtype: new ColorInput(),
+            inputtype: new VariableColorInput(),
+            data: {
+                options: Variables.getPropertiesArray("colors")
+            }
         }]
 };
 
