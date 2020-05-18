@@ -1,4 +1,10 @@
-import { SectionInput, SelectInput, RadioButtonInput, CssUnitInput, ColorInput, VariableCssUnitInput } from '../inputs/inputs';
+import {
+    SectionInput,
+    SelectInput,
+    RadioButtonInput,
+    VariableCssUnitInput,
+    VariableColorInput
+} from '../inputs/inputs';
 import { inc_base_sort } from './common';
 import Variables from "../gui/variables";
 
@@ -30,7 +36,10 @@ const typography = {
             col: 6,
             inline: true,
             htmlAttr: 'style',
-            inputtype: new ColorInput(),
+            inputtype: new VariableColorInput(),
+            data: {
+                options: Variables.getPropertiesArray("colors")
+            }
         }, {
             name: "Font family",
             key: "font-family",
@@ -174,7 +183,12 @@ const typography = {
             sort: inc_base_sort(),
             col: 6,
             inline: true,
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, {
             name: "Letter spacing",
             key: "letter-spacing",
@@ -182,7 +196,12 @@ const typography = {
             sort: inc_base_sort(),
             col: 6,
             inline: true,
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, {
             name: "Text decoration",
             key: "text-decoration-line",
@@ -232,7 +251,10 @@ const typography = {
             col: 6,
             inline: true,
             htmlAttr: "style",
-            inputtype: new ColorInput(),
+            inputtype: new VariableColorInput(),
+            data: {
+                options: Variables.getPropertiesArray("colors")
+            }
         }, {
             name: "Decoration style",
             key: "text-decoration-style",
