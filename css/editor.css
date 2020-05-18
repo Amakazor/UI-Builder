@@ -15251,6 +15251,13 @@ body {
   right: 0;
   height: calc(100% - 91px);
 }
+#vvveb-builder #panels .no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+#vvveb-builder #panels .flex {
+  display: flex;
+}
 #vvveb-builder #left-panel, #vvveb-builder #right-panel, #vvveb-builder #variable-panel {
   transition: margin-right 0.1s linear;
   -moz-transition: margin-right 0.1s linear;
@@ -15843,12 +15850,16 @@ input[type=number]:focus {
   background-position: right 0.15rem center;
 }
 
-.input-group.auto input[type=number] {
+.input-group.auto input[type=number],
+.custom-variable_input.auto input[type=number] {
   display: none;
 }
 
-.input-group.auto .input-group-append {
+.input-group.auto .input-group-append,
+.custom-variable_input.auto .input-group-append {
   width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .btn-group.btn-group-fullwidth {

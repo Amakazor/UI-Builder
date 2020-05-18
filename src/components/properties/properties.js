@@ -732,17 +732,6 @@ const headingSizeProperty = {
     },
 };
 
-const backgroundProperty = {
-    name: "Background",
-    key: "background",
-    htmlAttr: "class",
-    validValues: bgcolorClasses,
-    inputtype: new SelectInput(),
-    data: {
-        options: bgcolorSelectOptions
-    }
-};
-
 const progressBarProperty = {
     name: "Progress",
     key: "background",
@@ -1228,7 +1217,6 @@ export {
     buttonGroupSizeProperty,
     buttonGroupAlignmentProperty,
     headingSizeProperty,
-    backgroundProperty,
     progressBarProperty,
     progressBackgroundProperty,
     progressStripedProperty,

@@ -1,5 +1,6 @@
-import { SectionInput, SelectInput, RadioButtonInput, CssUnitInput, ColorInput } from '../inputs/inputs';
+import { SectionInput, SelectInput, RadioButtonInput, CssUnitInput, ColorInput, VariableCssUnitInput } from '../inputs/inputs';
 import { inc_base_sort } from './common';
+import Variables from "../gui/variables";
 
 const typography = {
     properties: [
@@ -16,7 +17,12 @@ const typography = {
             sort: inc_base_sort(),
             col: 6,
             inline: true,
-            inputtype: new CssUnitInput()
+            inputtype: new VariableCssUnitInput(),
+            data: {
+                options: Variables.getPropertiesArray("sizes"),
+                keygroup: "",
+                keyname: "",
+            }
         }, {
             name: 'Color',
             key: "color",

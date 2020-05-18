@@ -1,10 +1,9 @@
-import { backgroundColorProperty, backgroundProperty, textColorProperty } from '../properties/properties';
+import { backgroundColorProperty, textColorProperty } from '../properties/properties';
 
 const body = {
     name: 'Body',
     nodes: ['body'],
     properties: [
-        backgroundProperty,
         backgroundColorProperty,
         textColorProperty
     ]

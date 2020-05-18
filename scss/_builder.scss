@@ -73,6 +73,18 @@ body
 		z-index: 10;
 		right: 0;
 		height: calc(100% - #{$builder-header-top-height + 56px});
+
+		.no-padding
+		{
+			padding-left: 0;
+			padding-right: 0;
+
+		}
+
+		.flex
+		{
+			display: flex;
+		}
 	}
 
 	#left-panel, #right-panel, #variable-panel
@@ -808,14 +820,19 @@ input[type="number"]:focus {
 	background-position:right .15rem center;
 }
 
-.input-group.auto input[type="number"]
+.input-group.auto input[type="number"],
+.custom-variable_input.auto input[type="number"]
 {
 	display:none;
 }
 
-.input-group.auto .input-group-append
+.input-group.auto .input-group-append,
+.custom-variable_input.auto .input-group-append
+
 {
 	width:100%;
+	flex: 0 0 100%;
+	max-width: 100%;
 }
 
 
