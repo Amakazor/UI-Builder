@@ -24,12 +24,15 @@ export default Variables = {
         this.load();
         //this.cssVariables.colors = {"color-red":"#FF0000", "color-blue":"#0000FF"};
         //this.cssVariables.sizes = {"font-size-normal":"14px","font-size-big":"5rem"};
-        //this.save();
         //this.load();
+        //this.addVariable('colors', 'color-test');
+        this.save();
+        //this.deleteVariable('colors', 'color-test');
         this.prepareInputs();
     },
     render() {
         if (this.variablesContainer) {
+            this.variablesContainer[0].innerHTML = "";
             for (let [Index, Val] of Object.entries(this.cssHeaders)) {
                 this.variablesContainer[0].insertAdjacentHTML('afterbegin', tmpl("inputsectioninput", {
                     key: "variables_" + Val.name,
@@ -49,13 +52,24 @@ export default Variables = {
                                         header: Name
                                     }));
                                     toInsert.appendChild( this.inputs[Index][Name].element[0]);
+                                    toInsert.insertAdjacentHTML('beforeend', tmpl("variablepost", {
+                                        group: Index,
+                                        name: Name
+                                    }));
                                     element.appendChild(toInsert);
                                     this.inputs[Index][Name].setValue(Value);
                                 }
                             }
+
+                            element.insertAdjacentHTML('beforeend', tmpl("variableadd", {
+                                group: Index,
+                            }));
                         }
                     }
                 }
+
+                this.bindDeleteButtons();
+                this.bindAddButtons();
             }
         }
 
@@ -103,7 +117,7 @@ export default Variables = {
     },
     changeValue(Group, Name, Value) {
         if (Name && Value) {
-            if(this.cssVariables[Group][Name]) {
+            if(this.cssVariables[Group] && this.cssVariables[Group][Name] !== undefined) {
                 this.cssVariables[Group][Name] = Value;
             }
         }
@@ -146,5 +160,41 @@ export default Variables = {
             }
         }
         return properties
+    },
+    deleteVariable(group, name) {
+        let cssVariables = window.Variables.cssVariables;
+        if (cssVariables && cssVariables[group] && cssVariables[group][name] !== undefined) {
+            delete cssVariables[group][name];
+            window.Variables.save();
+            window.Variables.prepareInputs();
+            window.Variables.render();
+            window.Variables.setVariables();
+        }
+    },
+    addVariable(group, name = "", value = "") {
+        do {
+            name = prompt("name of the new variable:");
+        } while (!name);
+
+        let cssVariables = window.Variables.cssVariables;
+        if (cssVariables && cssVariables[group] && !cssVariables[group][name]) {
+            cssVariables[group][name] = value;
+            window.Variables.save();
+            window.Variables.prepareInputs();
+            window.Variables.render();
+            window.Variables.setVariables();
+        }
+    },
+    bindDeleteButtons() {
+        let elements = this.variablesContainer[0].querySelectorAll("button.variable-delete");
+        for (let element of elements) {
+            element.addEventListener('click', this.deleteVariable.bind(null, $(element).data('group'), $(element).data('key')), false)
+        }
+    },
+    bindAddButtons() {
+        let elements = this.variablesContainer[0].querySelectorAll("button.variable-add");
+        for (let element of elements) {
+            element.addEventListener('click', this.addVariable.bind(null, $(element).data('group'), "", ""), false);
+        }
     }
 }
