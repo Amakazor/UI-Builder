@@ -6,6 +6,8 @@ import element from './components/element';
 import border from './components/border';
 import padding from './components/padding';
 import display from './components/display';
+import gridContainer from './components/grid-container';
+import gridElement from './components/grid-element';
 import typography from './components/typography';
 import size from './components/size';
 import margin from './components/margin';
@@ -55,7 +57,9 @@ ComponentsGroup['通用组件'] = [
 Components.add("_base", element);
 Components.extend("_base", "_base", size);
 Components.extend("_base", "_base", display);
-Components.extend("_base", "_base", typography)
+Components.extend("_base", "_base", gridContainer);
+Components.extend("_base", "_base", gridElement);
+Components.extend("_base", "_base", typography);
 Components.extend("_base", "_base", margin);
 Components.extend("_base", "_base", padding);
 Components.extend("_base", "_base", border);

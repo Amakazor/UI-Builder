@@ -42,6 +42,9 @@ const display = {
                     value: "inline-block",
                     text: "Inline Block"
                 }, {
+                    value: "grid",
+                    text: "Grid"
+                }, {
                     value: "none",
                     text: "none"
                 }]

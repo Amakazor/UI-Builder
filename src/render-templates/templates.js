@@ -27,6 +27,7 @@ import variablepost from './variable-post';
 import variableadd from './variable-add';
 import inputvariablecolorinput from './input-variablecolorinput';
 import inputvariablecssunitinput from './input-variablecssunitinput';
+import inputgridcssunitinput from "./input-gridcssunitinput";
 
 const templates = {
     inputnumberinput,
@@ -57,7 +58,8 @@ const templates = {
     variablepost,
     variableadd,
     inputvariablecolorinput,
-    inputvariablecssunitinput
+    inputvariablecssunitinput,
+    inputgridcssunitinput
 };
 
 export default templates;
